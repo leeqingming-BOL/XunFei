@@ -41,3 +41,7 @@ ENV/
 *.log
 .coverage
 htmlcov/ 
+
+# 项目特定文件
+需求.txt
+API.txt 
