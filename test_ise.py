@@ -21,11 +21,16 @@ import os
 import xml.etree.ElementTree as ET
 import argparse
 
-# 讯飞开放平台配置
-host_url = "ws://ise-api.xfyun.cn/v2/open-ise"
-appid = "be806498"  # 控制台获取
-api_secret = "MTVjOTBkMTEyNmYyZTdhODMxNDI2YTYy"
-api_key = "90c93db93bf80f3ca253d0ddf90f86c2"
+# 导入API配置
+try:
+    from config import host_url, appid, api_secret, api_key
+except ImportError:
+    # 如果没有找到配置文件，使用默认配置
+    print("警告: 未找到config.py文件，请创建并配置您的API密钥")
+    host_url = "ws://ise-api.xfyun.cn/v2/open-ise"
+    appid = "your_appid_here"
+    api_secret = "your_api_secret_here"
+    api_key = "your_api_key_here"
 
 # 测评类型配置
 CATEGORY_TYPES = {
