@@ -41,7 +41,8 @@ def product_url(api_secret, api_key):
     print(signature_sha)
     authorization_origin = "api_key=\"%s\", algorithm=\"%s\", headers=\"%s\", signature=\"%s\"" % (
         api_key, "hmac-sha256", "host date request-line", signature_sha)
-    authorization = base64.b64encode(authorization_origin.encode('utf-8')).decode(encoding='utf-8')
+    authorization = base64.b64encode(
+        authorization_origin.encode('utf-8')).decode(encoding='utf-8')
     print(authorization)
     # 将请求的鉴权参数组合为字典
     dict_data = {
